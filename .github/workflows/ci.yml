@@ -21,3 +21,11 @@ jobs:
 
       - name: Run tests
         run: make all
+
+      - name: Archive common test results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: CT results
+          path: _build/test/logs/**
+          retention-days: 1
