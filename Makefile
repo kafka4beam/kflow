@@ -14,7 +14,7 @@ CONCUERROR_RUN := $(CONCUERROR) -x snabbkaffe_collector -x snabbkaffe -x snabbka
 
 .PHONY: all
 all: $(PICS)
-	rebar3 do compile,edoc,dialyzer,xref,eunit,ct,cover -v -m $(MIN_COVERAGE)
+	rebar3 do compile,edoc,dialyzer,xref,eunit -d test,ct --suite kflow_pipe_SUITE,cover -v #-m $(MIN_COVERAGE)
 
 .PHONY: clean
 clean:
