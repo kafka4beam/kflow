@@ -1,7 +1,7 @@
 # KFlow
 > Bullet-proof data stream processing framework
 
-![Build Status][ci-image]
+[![CI](https://github.com/kafka4beam/kflow/actions/workflows/ci.yml/badge.svg)](https://github.com/kafka4beam/kflow/actions/workflows/ci.yml)
 [![License][license-image]][license-url]
 
 KFlow is an Erlang dataflow DSL built with Kafka in mind. Services
