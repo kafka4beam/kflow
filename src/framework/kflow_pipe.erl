@@ -243,11 +243,11 @@ handle_down(Pid, Reason, exiting, Data) ->
                    }),
       Replies = [{reply, I, ok} || I <- ShutdownRef],
       gen_statem:reply(Replies),
-      Reason = case ExpectedStop of
+      StopReason = case ExpectedStop of
                  true  -> normal;
                  false -> kflow_pipe_crash
                end,
-      {stop, Reason};
+      {stop, StopReason};
      IsChild ->
       ?slog(info, #{ what   => "kflow_pipe node terminated; keep waiting for the last one"
                    , self   => self()
